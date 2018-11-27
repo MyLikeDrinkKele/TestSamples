@@ -141,6 +141,3 @@ car1 = Car()
 printRun(car1)
 
 print(type(car1) == type(cat1))
-
-
-int
