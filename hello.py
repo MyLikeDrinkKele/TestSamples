@@ -106,38 +106,118 @@
 # dog1.setAge(0)
 
 
-class Animal(object):
-    def run(self):
-        print('魔力红')
+# class Animal(object):
+#     def run(self):
+#         print('魔力红')
+#
+#
+# class Dog(Animal):
+#     def run(self):
+#         print('dog，魔力红')
+#
+#
+# class Cat(Animal):
+#     def run(self):
+#         print('cat，魔力红')
+#
+#
+# class Car(object):
+#     def run(self):
+#         print('car，魔力红')
+#
+#
+# dog1 = Dog()
+# dog1.run()
+# cat1 = Cat()
+# cat1.run()
+# # True
+# print(isinstance(dog1, Dog))
+# # True
+# print(isinstance(dog1, Animal))
+#
+#
+# def printRun(animal):
+#     animal.run()
+#     animal.run()
+#
+#
+# car1 = Car()
+# printRun(car1)
+#
+# print(type(car1) == type(cat1))
+
+# if type('str') == type('123'):
+#     print('类型相等')
+# import types
+#
+#
+# def fu():
+#     pass
+#
+#
+# str1 = 'renshengrumeng'
+# print(type(fu) == types.FunctionType)
+# print(type(abs) == types.BuiltinFunctionType)
+# str1 = 'test'
+# print(dir(str1))
+# print(len('abc'))
+# print('abc'.__len__())
 
 
-class Dog(Animal):
-    def run(self):
-        print('dog，魔力红')
+# class MyObject(object):
+#     def __init__(self):
+#         self.s = 9
+#
+#     def power(self):
+#         return self.s * self.s
+#
+#
+# m1 = MyObject()
+# # 检查是否有s属性
+# print(hasattr(m1, 's'))
+# # 为对象临时设置一个属性，并赋值
+# setattr(m1, 'w', '10')
+# print(m1.w)
+# m2 = MyObject()
+# # True
+# print(hasattr(m1, 'w'))
+# # False
+# print(hasattr(m2, 'w'))
+# # 获取s的属性值
+# print(getattr(m1, 's'))
+# # 如果获取不存在的属性值，就会报错
+# # print(getattr(m1, 'y'))
+# # 防止报错可设置返回默认值
+# print(getattr(m1, 'y', 404))
+# # 获得对象的方法
+# fu = getattr(m1, 'power')
+# print(fu())
 
 
-class Cat(Animal):
-    def run(self):
-        print('cat，魔力红')
+# def readImage(fp):
+#     if hasattr(fp, 'read'):
+#         return '可以进行流操作'
+#     return None
+
+class Student(object):
+    add = 0
+
+    def __init__(self, name):
+        self.name = name
+        Student.add = Student.add + 1
 
 
-class Car(object):
-    def run(self):
-        print('car，魔力红')
-
-
-dog1 = Dog()
-dog1.run()
-cat1 = Cat()
-cat1.run()
-
-
-def printRun(animal):
-    animal.run()
-    animal.run()
-
-
-car1 = Car()
-printRun(car1)
-
-print(type(car1) == type(cat1))
+s1 = Student('张三')
+s2 = Student('李四')
+s3 = Student('王五')
+s4 = Student('赵六')
+s4.add = 100
+# 4
+print(Student.add)
+# 4
+print(s3.add)
+# 100
+print(s4.add)
+del s4.add
+# 4
+print(s4.add)
